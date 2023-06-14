@@ -1,0 +1,1 @@
+export const api = "https://636d1a2aab4814f2b278c76c.mockapi.io/delphianalytics"
