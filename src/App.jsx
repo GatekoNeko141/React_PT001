@@ -5,7 +5,7 @@ import { BrowserRouter as Router,
 } from "react-router-dom"
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { blue } from '@mui/material/colors'
+import { blue, green, red } from '@mui/material/colors'
 
 import Layout from './layout/Layout'
 import { Page } from './pages'
@@ -21,6 +21,16 @@ const theme = createTheme({
       main: blue[500],
       medium: blue[700],
       dark: blue[900],
+    },
+    success: {
+      main: green[500],
+      medium: green[700],
+      dark: green[900],
+    },
+    danger: {
+      main: red[500],
+      medium: red[700],
+      dark: red[900],
     },
   },
 })
