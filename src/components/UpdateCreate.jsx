@@ -20,7 +20,11 @@ const UpdateCreate = ({dataRow, getPost, handleClose, setOpenAlert, setAlertText
   }, [])
 
   const updateOrCreateRow = (data) => {
-    update(data)
+    if(hasDataRow){
+      update(data)
+    }else{
+      create(data)
+    }
   }
   
   const update = async (sendData) => {
@@ -39,8 +43,24 @@ const UpdateCreate = ({dataRow, getPost, handleClose, setOpenAlert, setAlertText
     handleClose()
   }
 
+  const create = async (sendData) => {
+    try {
+      await axios.post(endpoint + '/posts', sendData)
+      setAlertText('Registro Insertado')
+      setTypeAlert('success')
+    } catch (error) {
+      setAlertText('Error al actualizar')
+      setTypeAlert('danger')
+    }
+    
+    setOpenAlert(true)
+    getPost()
+
+    handleClose()
+  }
+
   const UpdateCreateHTML = (<>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
+    <Typography id="modal-modal-title" variant="h6" component="h2" className='t-center'>
       {hasDataRow ? 'Actualizar' : 'Crear'}
     </Typography>
     
@@ -69,7 +89,15 @@ const UpdateCreate = ({dataRow, getPost, handleClose, setOpenAlert, setAlertText
         </Grid>
       </Grid>
 
-      <Button variant="outlined" type='submit'>Guardar</Button>
+      <Grid container direction="row" alignItems="center" justifyContent="center">
+        <Grid item>
+          <Button variant="outlined" color='danger' onClick={() => handleClose()}>Cancelar</Button>
+        </Grid>
+        <Grid item>
+          <Button variant="outlined" color='success' type='submit'>Guardar</Button>
+        </Grid>
+      </Grid>
+
     </form>
   </>)
   

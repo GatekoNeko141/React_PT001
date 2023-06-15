@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Container  } from '@mui/material'
+import { Container, Grid, Typography } from '@mui/material'
 
 import { DataGrid } from '@mui/x-data-grid'
 import axios from 'axios'
 
-import { Delete, Update, Alerts } from '../components'
+import { Delete, Update, Create, Alerts } from '../components'
 //import style from '../assets/css/Page.module.css'
 
 const Page = () => {
@@ -49,6 +49,19 @@ const Page = () => {
     <Container>
       <Alerts openAlert={openAlert} setOpenAlert={setOpenAlert} text={alertText} type={typeAlert} />
 
+      <Grid container
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        sx={{my: 2}}
+      >
+        <Grid item>
+          <Typography variant="h5" component="h2">Tabla</Typography>
+        </Grid>
+        <Grid item>
+          <Create getPost={getPost} setOpenAlert={setOpenAlert} setAlertText={setAlertText} setTypeAlert={setTypeAlert}/>
+        </Grid>
+      </Grid>
       {
         !loader ?
         <DataGrid
