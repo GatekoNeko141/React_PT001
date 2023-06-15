@@ -3,12 +3,16 @@ import { Grid, Box, Typography } from '@mui/material'
 const Layout = ({children}) => {
   let LayoutHTML = (<>
     <Grid container
-      className={`h-100vh`}
       direction="column"
     >
       <Grid item
         alignItems="center"
         justifyContent="flex-start"
+        sx={{
+          position: 'fixed',
+          width: '100%',
+          zIndex: 1
+        }}
       >
         <Box
           sx={{
@@ -21,7 +25,7 @@ const Layout = ({children}) => {
       </Grid>
 
       <Grid item
-        className=''
+        sx={{marginY: 10}}
       >
         {children}
       </Grid>
