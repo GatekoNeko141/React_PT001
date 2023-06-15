@@ -1,22 +1,7 @@
 import { Grid, Box, Typography } from '@mui/material'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { blue } from '@mui/material/colors';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#FFF',
-    },
-    secondary: {
-      main: blue[500],
-      medium: blue[700],
-      dark: blue[900],
-    },
-  },
-})
 
 const Layout = ({children}) => {
-  let LayoutHTML = (<ThemeProvider theme={theme}>
+  let LayoutHTML = (<>
     <Grid container
       className={`h-100vh`}
       direction="column"
@@ -30,8 +15,8 @@ const Layout = ({children}) => {
             backgroundColor: 'secondary.dark'
           }}
         >
-          <Typography variant='h5' color="primary" className='t-center'>Prueba Tecnica</Typography>
-          <Typography variant='subtitle1' color="primary" className='t-center'>John Eymar Rodríguez Arteaga</Typography>
+          <Typography variant='h5' color="default.main" className='t-center'>Prueba Tecnica</Typography>
+          <Typography variant='subtitle1' color="default.main" className='t-center'>John Eymar Rodríguez Arteaga</Typography>
         </Box>
       </Grid>
 
@@ -41,7 +26,7 @@ const Layout = ({children}) => {
         {children}
       </Grid>
     </Grid>
-  </ThemeProvider>)
+  </>)
 
   return LayoutHTML
 }
