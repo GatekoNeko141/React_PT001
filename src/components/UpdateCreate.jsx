@@ -34,7 +34,7 @@ const UpdateCreate = ({dataRow, getPost, handleClose, setOpenAlert, setAlertText
       setTypeAlert('success')
     } catch (error) {
       setAlertText('Error al actualizar')
-      setTypeAlert('danger')
+      setTypeAlert('error')
     }
     
     setOpenAlert(true)
@@ -49,8 +49,8 @@ const UpdateCreate = ({dataRow, getPost, handleClose, setOpenAlert, setAlertText
       setAlertText('Registro Insertado')
       setTypeAlert('success')
     } catch (error) {
-      setAlertText('Error al actualizar')
-      setTypeAlert('danger')
+      setAlertText('Error al crear')
+      setTypeAlert('error')
     }
     
     setOpenAlert(true)

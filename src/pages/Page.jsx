@@ -25,7 +25,7 @@ const Page = () => {
       renderCell: (params) => {
         return (<>
           <Update row={params.row} getPost={getPost} setOpenAlert={setOpenAlert} setAlertText={setAlertText} setTypeAlert={setTypeAlert}/>
-          <Delete row={params}/>
+          <Delete row={params} getPost={getPost} setOpenAlert={setOpenAlert} setAlertText={setAlertText} setTypeAlert={setTypeAlert}/>
         </>)
       },
       flex: 2
