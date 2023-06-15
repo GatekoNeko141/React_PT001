@@ -10,6 +10,7 @@
 ## Proyecto en produccion
 
 ### La carpeta build contiene el proyecto compilado, adicional a esto se debe instalar express que ya se encuentra incluido en el archivo `package.json`, esto con el objetivo de brindar una solucion en el enrutamiento enrutamiento del proyecto del lado del servidor
+### Por favor, seguir los siguientes pasos
 
 * `npm install` o `npm i` para las dependencias
 * Ejecutar el archivo `node index.js` o usar la librería `PM2` y apuntar a este archivo
